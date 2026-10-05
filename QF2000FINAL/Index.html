@@ -3,33 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Queen Fighter 2000 Wiki - Edición Interactiva</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        brand: { 500: '#2a7cbb', 600: '#1a5c96', 700: '#144672' }
-                    }
-                }
-            }
-        }
-    </script>
+    <title>Queen Fighter 2000 Wiki - Edición Game Boy</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
     <link rel="stylesheet" href="Estilo.css">
 </head>
-<body class="retro-wiki flex flex-col min-h-screen transition-colors duration-300">    <div class="crt-overlay" aria-hidden="true"></div>    <div class="cursor-orb" aria-hidden="true"></div>
+<body class="retro-wiki flex flex-col min-h-screen transition-colors duration-300">
+    <div class="crt-overlay" aria-hidden="true"></div>
+    <div class="cursor-orb" aria-hidden="true"></div>
 
     <!-- HEADER / HUD -->
     <header class="site-header sticky top-0 z-50">
         <div class="header-grid"></div>
         <div class="container mx-auto px-4 py-3 flex flex-wrap justify-between items-center relative">
-            <a href="Index.html" class="brand-lockup" data-tooltip="Volver al archivo principal">
+            <a href="Index_2.html" class="brand-lockup" data-tooltip="Volver al archivo principal">
                 <span class="brand-icon material-symbols-outlined">sports_kabaddi</span>
                 <span>
                     <span class="brand-title">QUEEN OF FIGHTERS</span>
@@ -39,7 +29,7 @@
 
             <div class="flex items-center gap-3">
                 <nav class="hidden md:flex items-center gap-1 nav-console">
-                    <a href="Index.html" class="nav-link active">
+                    <a href="Index_2.html" class="nav-link active">
                         <span class="material-symbols-outlined">home</span>Inicio
                     </a>
                     <a href="Jugabilidad.html" class="nav-link">
@@ -94,7 +84,7 @@
             <span>01</span><b>ARCHIVO PRINCIPAL</b><i></i><small>ENTRY 001</small>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
 
             <!-- CONTENIDO -->
             <div class="lg:col-span-2 space-y-6">
@@ -107,7 +97,7 @@
 
                     <div class="image-frame image-hover">
                         <img src="Imagenes/queen-of-fighting-2000-queen-fighter-2000-nü-wang-ge-dou-v0-mo7g8biyx78d1.png"
-                             onerror="this.onerror=null; this.src='https://placehold.co/800x450/101a2d/55f6ff?text=Queen+Fighter+2000'"
+                             onerror="this.onerror=null; this.src='https://placehold.co/800x450/303b20/9bbc0f?text=Queen+Fighter+2000'"
                              alt="Queen Fighter 2000 Gameplay"
                              onclick="openModal(this.src, this.alt)">
                         <div class="image-hud">
@@ -141,7 +131,7 @@
                             <p class="data-lead">También conocido como <strong>Gals Fighters</strong> o <strong>Queen of Fighting 2000</strong>, se basa en la jugabilidad del título de SNK para Neo Geo Pocket Color. Fue publicado por la propia Vast Fame en Taiwán.</p>
                             <div class="image-frame compact image-hover">
                                 <img src="Imagenes/H2x1_NSwitchDS_SNKGalsFighters_image1600w.jpg"
-                                     onerror="this.onerror=null; this.src='https://placehold.co/800x400/101a2d/55f6ff?text=SNK+Gals+Fighters'"
+                                     onerror="this.onerror=null; this.src='https://placehold.co/800x400/303b20/9bbc0f?text=SNK+Gals+Fighters'"
                                      alt="Gals Fighters Inspiration"
                                      onclick="openModal(this.src, this.alt)">
                                 <div class="image-hud"><span>REFERENCE // 02</span></div>
@@ -193,7 +183,7 @@
                         <div class="cover-label">PORTADA OFICIAL <span>IMG_001</span></div>
                         <div class="cover-frame image-hover">
                             <img src="Imagenes/Portada.jpg"
-                                 onerror="this.onerror=null; this.src='https://placehold.co/400x400/101a2d/55f6ff?text=Portada'"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x400/303b20/9bbc0f?text=Portada'"
                                  alt="Portada de Queen Fighter 2000"
                                  onclick="openModal(this.src, this.alt)">
                         </div>
@@ -253,20 +243,20 @@
         }
 
         function openModal(src, alt) {
-            const modal = document.getElementById('image-modal');
+            const modalEl = document.getElementById('image-modal');
             document.getElementById('modal-image').src = src;
             document.getElementById('modal-image').alt = alt || '';
             document.getElementById('modal-caption').textContent = alt || 'IMAGE FILE';
-            modal.classList.add('show');
-            modal.setAttribute('aria-hidden', 'false');
+            modalEl.classList.add('show');
+            modalEl.setAttribute('aria-hidden', 'false');
             document.body.classList.add('modal-open');
         }
 
         function closeModal(event) {
             if (event && event.target.closest('.modal-window') && !event.target.closest('.modal-close')) return;
-            const modal = document.getElementById('image-modal');
-            modal.classList.remove('show');
-            modal.setAttribute('aria-hidden', 'true');
+            const modalEl = document.getElementById('image-modal');
+            modalEl.classList.remove('show');
+            modalEl.setAttribute('aria-hidden', 'true');
             document.body.classList.remove('modal-open');
         }
 
@@ -274,7 +264,6 @@
             if (event.key === 'Escape') closeModal();
         });
 
-        // Pequeño efecto de seguimiento del cursor en escritorio.
         const orb = document.querySelector('.cursor-orb');
         if (orb && window.matchMedia('(pointer:fine)').matches) {
             window.addEventListener('pointermove', e => {
@@ -282,7 +271,6 @@
             });
         }
 
-        // Aparición suave de las secciones al hacer scroll.
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('visible');
