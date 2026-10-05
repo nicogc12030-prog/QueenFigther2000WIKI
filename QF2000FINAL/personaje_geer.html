@@ -1,77 +1,219 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>[NOMBRE DEL PERSONAJE] - Queen Fighter 2000 Wiki</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geer - Queen Fighter 2000 Wiki</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    <link rel="stylesheet" href="Estilo.css">
+</head>
+<body class="retro-wiki flex flex-col min-h-screen transition-colors duration-300">
+    <div class="crt-overlay" aria-hidden="true"></div>
+    <div class="cursor-orb" aria-hidden="true"></div>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- HEADER / HUD -->
+    <header class="site-header sticky top-0 z-50">
+        <div class="header-grid"></div>
+        <div class="container mx-auto px-4 py-3 flex flex-wrap justify-between items-center relative">
+            <a href="Index.html" class="brand-lockup" data-tooltip="Volver al archivo principal">
+                <span class="brand-icon material-symbols-outlined">sports_kabaddi</span>
+                <span>
+                    <span class="brand-title">QUEEN OF FIGHTERS</span>
+                    <span class="brand-subtitle">BOOTLEG // ARCHIVE 2001</span>
+                </span>
+            </a>
 
-  <script src="https://cdn.tailwindcss.com"></script>
+            <div class="flex items-center gap-3">
+                <nav class="hidden md:flex items-center gap-1 nav-console">
+                    <a href="Index.html" class="nav-link">
+                        <span class="material-symbols-outlined">home</span>Inicio
+                    </a>
+                    <a href="Jugabilidad.html" class="nav-link">
+                        <span class="material-symbols-outlined">sports_esports</span>Jugabilidad
+                    </a>
+                    <a href="Personajes.html" class="nav-link active">
+                        <span class="material-symbols-outlined">groups</span>Personajes
+                    </a>
+                </nav>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+                <button onclick="toggleDarkMode()" class="icon-button" data-tooltip="Cambiar modo de pantalla" aria-label="Cambiar modo">
+                    <span id="theme-icon" class="material-symbols-outlined">light_mode</span>
+                </button>
+            </div>
+        </div>
+    </header>
 
-  <link rel="stylesheet" href="Estilo.css">
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container mx-auto px-4 my-8 flex-grow max-w-7xl">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
 
-  </head>
-<body class="d-flex flex-column min-vh-100">
+            <!-- CONTENIDO DE GEER -->
+            <div class="lg:col-span-2 space-y-6">
+                <article class="terminal-card reveal">
+                    <div class="card-topbar">
+                        <span><i></i> QF_FIGHTER_GEER.DAT</span>
+                        <span class="mono">[ ACTIVE_PROFILE ]</span>
+                    </div>
 
-  <header class="bg-primary text-white shadow-md">
-    <nav class="navbar navbar-expand-lg navbar-dark container">
-      <a class="navbar-brand fw-bold" href="Index.html">
-        <span class="text-warning">QUEEN OF FIGHTERS</span> Wiki
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div id="menu" class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a href="Index.html" class="nav-link">Inicio</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Juegos</a></li>
-          <li class="nav-item"><a href="Personajes.html" class="nav-link active">Personajes</a></li>
-          <li class="nav-item"><a href="Jugabilidad.html" class="nav-link">Jugabilidad</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+                    <div class="card-body space-y-4">
+                        <div class="section-title">
+                            <span class="material-symbols-outlined">sports_martial_arts</span>
+                            GEER // ARCHIVO DE LUCHADORA
+                        </div>
 
-  <main class="container my-5 flex-grow-1">
-    <div class="row g-4">
+                        <p class="data-lead">
+                            <strong>Geer</strong> es una de las 16 luchadoras seleccionables en <em>Queen Fighter 2000</em>. Destaca por su estilo dinámico inspirado en porristas y feroces movimientos acrobáticos cuerpo a cuerpo[cite: 6, 9].
+                        </p>
 
-      <div class="col-md-8 bg-white p-4 rounded shadow">
-        <h1 class="border-bottom pb-2 mb-4"><strong>GEER</strong></h1>
+                        <div class="section-title">
+                            <span class="material-symbols-outlined">history</span>
+                            BIOGRAFÍA E INSPIRACIÓN
+                        </div>
 
-        <p class="lead">
-          Geer es una de las 16 luchadoras seleccionables en <em>Queen Fighter 2000</em>.
-          Se caracteriza por su estilo de combate basado en [ESTILO DE LUCHA DEL PERSONAJE].
-        </p>
+                        <div class="image-frame image-hover my-3">
+                            <img src="Imagenes/Geer1.png"
+                                 alt="Geer en Queen Fighter 2000"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/800x400/303b20/9bbc0f?text=Geer+Spritesheet'"
+                                 onclick="openModal(this.src, this.alt)">
+                            <div class="image-hud">
+                               <span>SPRITE_PREVIEW // GEER</span>
+                               <button onclick="openModal(this.parentElement.previousElementSibling.src, 'Geer en Queen Fighter 2000')" data-tooltip="Ampliar imagen">
+                                   <span class="material-symbols-outlined">fullscreen</span>
+                               </button>
+                            </div>
+                        </div>
 
-        <h3 class="text-primary mt-4">Biografía e Inspiración</h3>
+                        <p class="data-lead">
+                            Su diseño y repertorio de movimientos están claramente inspirados en <strong>Felicia</strong> de la saga <em>SNK Vs. Capcom</em> (y <em>Darkstalkers</em>), adaptando su agilidad felina, garras y velocidad frenética a un formato de porrista adaptado para las limitaciones técnicas de la Game Boy Color[cite: 9].
+                        </p>
 
-        <img src="Imagenes/[NOMBRE_PERSONAJE].png"
-             alt="[NOMBRE DEL PERSONAJE] en Queen Fighter 2000"
-             class="img-fluid rounded shadow my-3"
-             onerror="this.onerror=null; this.src='https://placehold.co/800x400/f8f9fa/202122?text=Imagen+de+[NOMBRE]'"/>
+                        <div class="section-title">
+                            <span class="material-symbols-outlined">bolt</span>
+                            ESTILO DE COMBATE Y MOVIMIENTOS ESPECIALES
+                        </div>
+                        <p>
+                            El estilo de Geer es <strong>extremadamente ágil, acrobático y veloz</strong>, combinando ataques con pompones y zarpazos rápidos. A continuación se detallan sus comandos y movimientos especiales traducidos:
+                        </p>
 
-        <p>
-          Su diseño está claramente inspirado en [PERSONAJE ORIGINAL DE KOF] de la saga <em>The King of Fighters</em>,
-          sirviendo como una contraparte femenina. [AQUÍ SE ESCRIBE UN PÁRRAFO DETALLADO SOBRE LA HISTORIA O EL CONTEXTO DEL PERSONAJE].
-        </p>
+                        <ul class="spec-list">
+                            <li><span>Rolling Buckler ~ Uppercut</span><b>Media U adelante + B</b></li>
+                            <li><span>Pom-Pom Uppercut</span><b>Adelante, Abajo, Diagonal Abajo-Adelante + B</b></li>
+                            <li><span>Pom-Pom Rush</span><b>Cuarto de círculo atrás + B</b></li>
+                            <li><span>Pom-Pom Toss</span><b>Media U atrás + A</b></li>
+                            <li><span>Cat Spike</span><b>Abajo, Arriba + A</b></li>
+                            <li><span>Cut-Out Teleport</span><b>Media U adelante + A (cerca del rival)</b></li>
+                            <li><span>Dancing Flash</span><b>Media U atrás x2 + B (Movimiento Especial Definitivo)</b></li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
 
-        <h3 class="text-primary mt-4">Estilo de Combate y Movimientos</h3>
-        <p>
-          El estilo de [NOMBRE DEL PERSONAJE] es [DESCRIPCIÓN BREVE DEL ESTILO, EJ: agresivo y rápido, defensivo y de proyectiles].
-          Aunque los controles son limitados, los jugadores pueden ejecutar movimientos especiales. Algunos de sus movimientos más conocidos incluyen:
-        </p>
-        <ul>
-          <li><strong>[NOMBRE DEL MOVIMIENTO 1]:</strong> [Descripción breve, ej: Un golpe aéreo rápido.]</li>
-          <li><strong>[NOMBRE DEL MOVIMIENTO 2]:</strong> [Descripción breve, ej: Un ataque de carga con elemento fuego.]</li>
-          <li><strong>[NOMBRE DEL MOVIMIENTO 3]:</strong> [Descripción breve, ej: Su Súper Movimiento/Desesperación.]</li>
-        </ul>
-      </div>
+            <!-- SIDEBAR -->
+            <aside class="space-y-6">
+                <div class="terminal-card infobox reveal">
+                    <div class="card-topbar">
+                        <span><i></i> FIGHTER_DATA</span>
+                        <span class="mono">[ 01 ]</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="section-title">
+                            <span class="material-symbols-outlined">info</span>
+                            PERFIL DE GEER
+                        </div>
 
-      <aside class="col-md-4">
-        <div class="p-3 bg-light border rounded shadow-sm">
-          <h3 class="text-center text-primary">Perfil de [NOMBRE CORTO]</h3>
-          <ul class="list-unstyled">
-            <li><strong>Inspiración:</strong> [PERSONAJE ORIGINAL DE KOF]</li>
+                        <ul class="spec-list">
+                            <li><span>INSPIRACIÓN</span><b>Felicia (SNK vs Capcom / Darkstalkers)</b></li>
+                            <li><span>ESTILO</span><b>Acrobático / Porrista Felina</b></li>
+                            <li><span>ARMA</span><b>Pompones / Garras</b></li>
+                            <li><span>JUEGO</span><b>Queen Fighter 2000</b></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="quote-card reveal">
+                    <span class="material-symbols-outlined">sports_kabaddi</span>
+                    <p>READY TO CHEER & FIGHT!</p>
+                    <small>Utiliza sus movimientos de teletransportación y ráfagas para desconcertar al rival en combate cercano.</small>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container mx-auto px-4">
+            <div class="footer-line"><span></span> END OF FILE <span></span></div>
+            <p>© 2026 BOOTLEG GAMES WIKI // QUEEN FIGHTER 2000</p>
+            <small>ARCHIVE INTERFACE v2.0 — ALL SYSTEMS NOMINAL</small>
+        </div>
+    </footer>
+
+    <!-- MODAL DE IMAGEN -->
+    <div id="image-modal" class="modal" aria-hidden="true" onclick="closeModal(event)">
+        <div class="modal-window">
+            <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <div class="modal-topbar">IMAGE_VIEWER.EXE <span>● ● ●</span></div>
+            <img id="modal-image" src="" alt="">
+            <p id="modal-caption"></p>
+        </div>
+    </div>
+
+    <script>
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+            html.classList.toggle('dark');
+            icon.textContent = html.classList.contains('dark') ? 'dark_mode' : 'light_mode';
+            localStorage.setItem('qf-theme', html.classList.contains('dark') ? 'dark' : 'light');
+        }
+
+        if (localStorage.getItem('qf-theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+            document.getElementById('theme-icon').textContent = 'dark_mode';
+        }
+
+        function openModal(src, alt) {
+            const modalEl = document.getElementById('image-modal');
+            document.getElementById('modal-image').src = src;
+            document.getElementById('modal-image').alt = alt || '';
+            document.getElementById('modal-caption').textContent = alt || 'IMAGE FILE';
+            modalEl.classList.add('show');
+            modalEl.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('modal-open');
+        }
+
+        function closeModal(event) {
+            if (event && event.target.closest('.modal-window') && !event.target.closest('.modal-close')) return;
+            const modalEl = document.getElementById('image-modal');
+            modalEl.classList.remove('show');
+            modalEl.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('modal-open');
+        }
+
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape') closeModal();
+        });
+
+        const orb = document.querySelector('.cursor-orb');
+        if (orb && window.matchMedia('(pointer:fine)').matches) {
+            window.addEventListener('pointermove', e => {
+                orb.style.transform = `translate(${e.clientX - 8}px, ${e.clientY - 8}px)`;
+            });
+        }
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.08 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
